@@ -3,14 +3,10 @@ import {Link, Routes, Route} from "react-router-dom";
 import homePage from "./pages/homePage";
 import layoutPage from "./pages/layoutPage";
 import aboutPage from "./pages/aboutPage";
-import usersPage from "./pages/usersPage";
+
 
 function App() {
 
-    const userId = (id) => {
-        console.log(id);
-        return id;
-    }
 
     return (
         <div>
@@ -28,9 +24,6 @@ function App() {
                 <Routes>
                     <Route path={'/'} element={homePage()}/>
                     <Route path={'/layout'} element={layoutPage()}>
-                        <Route path={'users'} element={usersPage()}>
-                            <Route path={`${userId}`} element={homePage()}/>
-                        </Route>
                     </Route>
                     <Route path={'/about'} element={aboutPage()}/>
                 </Routes>
